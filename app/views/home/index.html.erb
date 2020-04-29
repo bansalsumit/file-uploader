@@ -9,17 +9,26 @@
   <div class="container">
     <div class="nav row">
       <div class="col-sm-8"></div>
-      <div class="col-sm nav-bar-items">
-        <button class="nav-bar-item">
-          <a href="/sign_up">Sign Up</a>
-        </button>
-      </div>
-      <div class="col-sm nav-bar-items">
-        <button class="nav-bar-item">
-          <a href="/sign_in">Log In</a>
-        </button>
-      </div>
-    </div>
+      <% if user_signed_in? %>
+        <div class="col-sm nav-bar-items">
+          <button class="nav-bar-item" style="height:50px;">
+            <a href="/sign_out">SignOut</a>
+          </button>
+        </div>
+        <div class="col-sm nav-bar-items"></div>
+      <% else %>
+        <div class="col-sm nav-bar-items">
+            <button class="nav-bar-item">
+              <a href="/sign_up">Sign Up</a>
+            </button>
+          </div>
+          <div class="col-sm nav-bar-items">
+            <button class="nav-bar-item">
+              <a href="/sign_in">Log In</a>
+            </button>
+          </div>
+        </div>
+      <% end %>
     <div class="main"></div>
   </div>
 </body>
