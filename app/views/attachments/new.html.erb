@@ -1,0 +1,25 @@
+<% content_for :head do %>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<% end %>
+<% if @attachment.errors.present? %>
+   <div class = "alert-error">
+      <ul>
+         <% @attachment.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+         <% end %>
+      </ul>
+   </div>
+<% end %>
+
+<div class="attachment-block">
+  <h3>New Attachment</h3>
+  <%= form_for @attachment do |f| %>
+    <%= f.label :title %><br />
+    <%= f.text_field :title, class: 'login-input' %>
+    <%= f.label :description %><br />
+    <%= f.text_field :description, class: 'login-input' %>
+    <%= f.label :attachment %>
+    <%= f.file_field :attachment, class: 'login-input' %>
+    <%= f.submit "Save", class: 'submit' %>
+  <% end %>
+</div>

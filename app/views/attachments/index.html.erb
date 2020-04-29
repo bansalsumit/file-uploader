@@ -1,0 +1,24 @@
+<% content_for :head do %>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<% end %>
+<h1>Attachments</h1>
+<div class="index-list">
+  <ul class="list-group">
+    <% @attachments.each do |attachment| %>
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm py-3 px-lg-5 border bg-light">
+            <%= attachment.title %>
+          </div>
+          <div class="col-sm py-3 px-lg-5 border bg-light">
+            <%= attachment.description %>
+          </div>
+          <div class="col-sm py-3 px-lg-5 border bg-light">
+            <%= link_to "Destroy", attachment_path(attachment), method: :delete %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<%= link_to "new attachment", new_attachment_path %>

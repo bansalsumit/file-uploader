@@ -1,0 +1,24 @@
+// Place all the styles related to the attachment controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.attachment-block {
+  height: 450px;
+  max-width: 320px;
+  margin: 0 auto;
+  background: whitesmoke;
+  padding: 40px 40px 60px;
+}
+
+.login-input {
+  margin: 5px 0 15px;
+  width: -webkit-fill-available;
+  height: 25px;
+}
+
+.alert-error {
+  color: red
+}
+
+.index-list {
+  width: 475px;
+}
