@@ -31,6 +31,9 @@ gem 'bootsnap', '>= 1.4.2', require: false
 # Use Devise for Authentication
 gem 'devise', '~> 4.7', '>= 4.7.1'
 
+# Use Carrierwave for uploading files
+gem 'carrierwave', '~> 2.1'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
