@@ -14,6 +14,9 @@
             <%= attachment.description %>
           </div>
           <div class="col-sm py-3 px-lg-5 border bg-light">
+            <%= attachment.link %>
+          </div>
+          <div class="col-sm py-3 px-lg-5 border bg-light">
             <%= link_to "Destroy", attachment_path(attachment), method: :delete %>
           </div>
         </div>

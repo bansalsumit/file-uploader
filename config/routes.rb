@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   end
 
   resources :attachments, only: [:index, :new, :create, :destroy]
+  get 'files/:link_id', to: 'attachments#link'
 end

@@ -11,6 +11,7 @@ class AttachmentsController < ApplicationController
   def create
     @attachment = Attachment.new(permitted_params)
     @attachment.user = current_user
+    @attachment.link = LINK_PREFFIX + current_user.id.to_s
     if @attachment.save
       redirect_to attachments_path, notice: "The file #{@attachment.title} has been uploaded successfully."
     else
@@ -27,6 +28,16 @@ class AttachmentsController < ApplicationController
       message = "The file #{@attachment.title} is not present in our system."
     end
     redirect_to attachments_path, notice: message
+  end
+
+  def link
+    @attachment = Attachment.find(params['link_id'].gsub(/[^\d]/,''))
+    send_file(@attachment.attachment.file.path,
+              :filename => @attachment.title,
+              :type => @attachment.attachment.file.content_type,
+              :disposition => 'attachment',
+              :url_based_filename => true)
+    # send_file @attachment.attachment.file, :filename => @attachment.title + '.csv', :type => "application/csv"
   end
 
   private
