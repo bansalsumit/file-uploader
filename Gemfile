@@ -34,6 +34,9 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 # Use Carrierwave for uploading files
 gem 'carrierwave', '~> 2.1'
 
+#Use Bitly to shorten the links
+gem 'bitly', '~> 2.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
