@@ -13,10 +13,10 @@ class AttachmentsController < ApplicationController
     @attachment.user = current_user
     # @attachment.link = LINK_PREFFIX + @attachment.id.to_s
     if @attachment.save
-      client = Bitly::API::Client.new(token: BITLY_TOKEN)
-      bitlink = client.shorten(long_url: LINK_PREFFIX + @attachment.id.to_s)
-      @attachment.link = bitlink.link
-      @attachment.save
+      # client = Bitly::API::Client.new(token: BITLY_TOKEN)
+      # bitlink = client.shorten(long_url: LINK_PREFFIX + @attachment.id.to_s)
+      # @attachment.link = bitlink.link
+      # @attachment.save
       redirect_to attachments_path, notice: "The file #{@attachment.title} has been uploaded successfully."
     else
       render 'new'
