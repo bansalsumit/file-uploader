@@ -1,4 +1,4 @@
 class Attachment < ApplicationRecord
-  mount_uploader :attachment, AttachmentUploader
+  mount_base64_uploader :attachment, AttachmentUploader
   belongs_to :user
 end
